@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gantt Chart</title>
+    <style>
+      :root {
+        --border: 0.5px solid #777;
+        --bg-gradient: #0093e9;
+        background-image: linear-gradient(160deg, #0093e9 0%, #2999bc 100%);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Courier New", Courier, monospace;
+        background-color: #f5f5f5;
+      }
+      .gantt-chart {
+        background-color: white;
+        padding: 20px;
+        border-radius: 30px;
+        -webkit-box-shadow: 4px 4px 22px -3px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 4px 4px 22px -3px rgba(34, 60, 80, 0.2);
+        box-shadow: 4px 4px 22px -3px rgba(34, 60, 80, 0.2);
+      }
+
+      .header {
+        font-size: 42px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .chart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+      }
+
+      .chart-card {
+        background-color: var(--bg-gradient);
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 10px;
+        height: 80px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .chart-table-header {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+      }
+      .chart-table-no-content {
+        width: 200px;
+        height: 40px;
+      }
+
+      .chart-table-month {
+        display: flex;
+        align-items: center;
+        list-style: none;
+      }
+      .chart-table-month li {
+        width: 80px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: var(--border);
+        /* border-bottom: 0.5px solid #111; */
+      }
+      .chart-table-month li:first-child {
+        border-left: var(--border);
+        border-right: var(--border);
+      }
+
+      .chart-table-month li:nth-child(n + 1):nth-child(n-11) {
+        border-right: var(--border);
+      }
+
+      .chart-table-item {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+      }
+      .chart-table-month li:last-child {
+        border-right: var(--border);
+      }
+
+      .chart-table-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .chart-table-body ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        position: relative;
+      }
+
+      .chart-table-item li:not(:last-child) {
+        width: 80px;
+        height: 48px;
+        border-top: var(--border);
+      }
+      .chart-table-item li:first-child {
+        border-left: var(--border);
+      }
+      .chart-table-item li:nth-child(n + 1):nth-child(n-11) {
+        border-right: var(--border);
+      }
+      .chart-table-item li:last-child() {
+        position: absolute;
+        border: 0;
+      }
+      .chart-table-item:last-child ul:last-child li {
+        border-bottom: var(--border);
+      }
+
+      .first,
+      .second,
+      .third,
+      .fourth,
+      .fifth,
+      .sixth,
+      .seventh,
+      .eighth,
+      .ninth,
+      .tenth {
+        position: relative;
+      }
+      .progress {
+        position: absolute;
+        background-color: var(--bg-gradient);
+        z-index: 10;
+        height: 30px;
+        border-right: 0;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .first .progress {
+        left: 1%;
+        width: 30%;
+      }
+      .second .progress {
+        right: 13.5%;
+        width: 28%;
+      }
+      .third .progress {
+        left: 17%;
+        width: 31%;
+      }
+      .fourth .progress {
+        right: 21%;
+        width: 45%;
+      }
+      .fifth .progress {
+        left: 10%;
+        width: 22%;
+      }
+      .sixth .progress {
+        right: 5%;
+        width: 36.5%;
+      }
+      .seventh .progress {
+        left: 3%;
+        width: 22%;
+      }
+      .eighth .progress {
+        right: 28.5%;
+        width: 21.5%;
+      }
+      .ninth .progress {
+        left: 8.5%;
+        width: 33%;
+      }
+      .tenth .progress {
+        right: 25%;
+        width: 31%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gantt-chart">
+      <div class="header">Task Progress</div>
+      <div class="chart">
+        <div class="chart-table">
+          <div class="chart-table-header">
+            <div class="chart-table-no-content"></div>
+            <ul class="chart-table-month">
+              <li>Jau</li>
+              <li>Feb</li>
+              <li>Mar</li>
+              <li>Apr</li>
+              <li>May</li>
+              <li>Jun</li>
+              <li>Jul</li>
+              <li>Aug</li>
+              <li>Sep</li>
+              <li>Oct</li>
+              <li>Nov</li>
+              <li>Dec</li>
+            </ul>
+          </div>
+
+          <!-- chart table body -->
+          <div class="chart-table-body">
+            <div class="chart-table-item">
+              <div class="chart-card">
+                <h3>Project name</h3>
+              </div>
+              <div>
+                <ul class="first">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+                <ul class="second">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+              </div>
+            </div>
+            <div class="chart-table-item">
+              <div class="chart-card">
+                <h3>Project name</h3>
+              </div>
+              <div>
+                <ul class="third">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+                <ul class="fourth">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+              </div>
+            </div>
+            <div class="chart-table-item">
+              <div class="chart-card">
+                <h3>Project name</h3>
+              </div>
+              <div>
+                <ul class="fifth">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+                <ul class="sixth">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+              </div>
+            </div>
+            <div class="chart-table-item">
+              <div class="chart-card">
+                <h3>Project name</h3>
+              </div>
+              <div>
+                <ul class="seventh">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+                <ul class="eighth">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+              </div>
+            </div>
+            <div class="chart-table-item">
+              <div class="chart-card">
+                <h3>Project name</h3>
+              </div>
+              <div>
+                <ul class="ninth">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+                <ul class="tenth">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <div class="progress">Progress</div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
