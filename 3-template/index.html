@@ -1,83 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Line Chart</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #f9f9f9;
-    }
-    .chart-container {
-      width: 600px;
-      height: 400px;
-    }
-    canvas {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Mada:wght@100;200;300;400;500;600;800;900&display=swap");
+        
+        body {
+          font-family: 'Mada', sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .section {
+            padding: 20px;
+            background-color: white;
+            border-radius: 20px;
+            width: 1000px;
+        }
+
+        h2 {
+            font-size: 42px;
+            font-weight: 400;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        h2 span {
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #111;
+        }
+
+        p {
+            text-transform: uppercase;
+            font-size: 17px;
+            color: #666;
+            text-align: justify;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            display: flex;
+            align-items: center;
+            column-gap: 15px;
+        }
+
+        ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        ul li h4{
+            width: 120px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 400;
+            background-color: #f5f7f8;
+        }
+        ul li div {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding-left: 8px;
+            background-color: #4163ee;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+        }
+
+        ul li:first-child div {
+            width: 450px;
+        }
+
+        ul li:nth-child(2) div {
+            width: 600px;
+        }
+        ul li:nth-child(3) div {
+            width: 800px;
+        }
+        ul li:nth-child(4) div {
+            width: 350px;
+        }
+         ul li:nth-child(5) div {
+            width: 470px;
+        }
+        ul li:nth-child(6) div {
+            width: 220px;
+        }
+
+    </style>
 </head>
 <body>
-  <div class="chart-container">
-    <canvas id="lineChart"></canvas>
-  </div>
+    <section class="section">
+        <h2>Social media <span>stats</span></h2>
+        <p>write something here</p>
 
-  <!-- Add Chart.js library -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <script>
-    // Data for the chart
-    const data = {
-      labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
-      datasets: [{
-        label: "Total Followers",
-        data: [1000, 3000, 5000, 8000, 15000, 40000, 120000, 200000],
-        borderColor: "#007bff",
-        fill: false,
-        tension: 0.3
-      }]
-    };
-
-    // Configuration for the chart
-    const config = {
-      type: 'line',
-      data: data,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: true,
-            position: 'bottom',
-          }
-        },
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Year'
-            }
-          },
-          y: {
-            title: {
-              display: true,
-              text: 'Followers'
-            },
-            beginAtZero: true
-          }
-        }
-      }
-    };
-
-    // Render the chart
-    const ctx = document.getElementById('lineChart').getContext('2d');
-    new Chart(ctx, config);
-  </script>
+        <ul class="progress">
+           <li class="progress-item">
+            <h4>Facebook</h4>
+            <div>130,000</div>
+           </li>
+           <li class="progress-item">
+            <h4>Instagram</h4>
+            <div>260,000</div>
+           </li>
+           <li class="progress-item">
+            <h4>YouTube</h4>
+            <div>340,000</div>
+           </li>
+           <li class="progress-item">
+            <h4>WhatsApp</h4>
+            <div>60,680</div>
+           </li>
+           <li class="progress-item">
+            <h4>Snapchat</h4>
+            <div>80,130</div>
+           </li>
+           <li class="progress-item">
+            <h4>Pinterest</h4>
+            <div>30,230</div>
+           </li>
+        </ul>
+    </section>
 </body>
 </html>
