@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        height: 500px;
+        width: 80%;
+        border: 2px solid gray;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      }
+      .male-bar,
+      .female-bar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 7%;
+      }
+
+      .male-bar {
+        align-items: end;
+      }
+
+      .female-bar {
+        align-items: start;
+      }
+
+      .male-bar div{
+        display: flex;
+        align-items: end;
+        column-gap: 10px;
+      }
+      .female-bar div {
+        display: flex;
+        align-items: start;
+        column-gap: 10px;
+      }
+      .content {
+        width: 20%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+      }
+
+      .content img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid gray;
+        opacity: 0.7;
+      }
+
+      .content h5 {
+        font-size: 16px;
+        font-weight: 400;
+        color: gray;
+      }
+
+      .middle-line {
+        width: 100%;
+        margin: 20px 0;
+        position: relative;
+        background-color: gray;
+        height: 2px;
+      }
+
+      .middle-line-time {
+        position: absolute;
+        top: -11px;
+        left: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 40px;
+      }
+
+      .middle-line-time span {
+        background-color: white;
+        padding: 5px;
+        font-size: 16px;
+      }
+
+      .bar-card {
+        width: 80px;
+        height: 20px;
+        background-color: rgb(14, 117, 117);
+      }
+
+      .male-bar .bar-card:first-child {
+        background-color: #44a5d9;
+        height: 35px;
+      }
+      .male-bar .bar-card:nth-child(2) {
+        height: 100px;
+        background-color: #53acc5;
+      }
+      .male-bar .bar-card:nth-child(3) {
+        height: 60px;
+        background-color: #63b2b1;
+      }
+      .male-bar .bar-card:nth-child(4) {
+        height: 140px;
+        background-color: #73b99d;
+      }
+      .male-bar .bar-card:nth-child(5) {
+        height: 25px;
+        background-color: #83bf89;
+      }
+      .male-bar .bar-card:nth-child(6) {
+        height: 100px;
+        background-color: #93c575;
+      }
+
+      /* female */
+      .female-bar .bar-card:first-child {
+        background-color: #44a5d9;
+        height: 70px;
+      }
+      .female-bar .bar-card:nth-child(2) {
+        height: 40px;
+        background-color: #53acc5;
+      }
+      .female-bar .bar-card:nth-child(3) {
+        height: 140px;
+        background-color: #63b2b1;
+      }
+      .female-bar .bar-card:nth-child(4) {
+        height: 100px;
+        background-color: #73b99d;
+      }
+      .female-bar .bar-card:nth-child(5) {
+        height: 70px;
+        background-color: #83bf89;
+      }
+      .female-bar .bar-card:nth-child(6) {
+        height: 40px;
+        background-color: #93c575;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="male-bar">
+        <div class="content">
+          <img src="./images/male.png" alt="male" />
+          <h5>Male</h5>
+        </div>
+        <div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+        </div>
+      </div>
+      <div class="middle-line">
+        <div class="middle-line-time">
+          <span>18-24</span>
+          <span>24-35</span>
+          <span>36-46</span>
+          <span>47-57</span>
+          <span>58-68</span>
+          <span>68-40</span>
+        </div>
+      </div>
+      <div class="female-bar">
+        <div class="content">
+          <img src="./images/female.png" alt="female" />
+          <h5>Female</h5>
+        </div>
+        <div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+          <div class="bar-card"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
