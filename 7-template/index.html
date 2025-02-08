@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0%;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5%;
+      }
+
+      h2 {
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 22px;
+        color: #555;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        color: #555;
+        margin-bottom: 35px;
+      }
+      .circles {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 100px;
+      }
+
+      .circle-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .circle {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .circle-content:first-child .circle {
+        background: conic-gradient(
+          #44a5d9 0% 30%,
+          #266677 30% 63%,
+          #63b2b1 63% 85%,
+          #126b6a 85% 100%
+        );
+      }
+      .circle-content:last-child .circle {
+        background: conic-gradient(
+          #44a5d9 0% 40%,
+          #266677 40% 63%,
+          #63b2b1 63% 72%,
+          #126b6a 72% 100%
+        );
+      }
+
+      .circle .label {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 4px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        border: 2px solid #f8f8f8;
+        color: white;
+      }
+      /* circl content first labels */
+      .circle-content:first-child .circle .label:first-child {
+        top: 0;
+        right: 0;
+        background-color: #44a5d9;
+      }
+      .circle-content:first-child .circle .label:nth-child(2) {
+        bottom: 0;
+        right: 0;
+        background-color: #266677;
+      }
+      .circle-content:first-child .circle .label:nth-child(3) {
+        top: 40%;
+        left: -20%;
+        background-color: #63b2b1;
+      }
+      .circle-content:first-child .circle .label:nth-child(4) {
+        top: 0;
+        left: 0;
+        background-color: #126b6a;
+      }
+
+      /* circl content second labels */
+      .circle-content:last-child .circle .label:first-child {
+        top: 10%;
+        right: -10%;
+        background-color: #44a5d9;
+      }
+      .circle-content:last-child .circle .label:nth-child(2) {
+        bottom: -8%;
+        right: 10%;
+        background-color: #266677;
+      }
+      .circle-content:last-child .circle .label:nth-child(3) {
+        bottom: 20%;
+        left: -15%;
+        background-color: #63b2b1;
+      }
+      .circle-content:last-child .circle .label:nth-child(4) {
+        top: 0;
+        left: 0;
+        background-color: #126b6a;
+      }
+      .circle-item {
+        z-index: 2;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+      }
+
+      .circle-item img {
+        width: 120px;
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .circle-content h6 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #555;
+      }
+      .circle-content p {
+        font-size: 13px;
+        text-align: center;
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Demographics</h2>
+      <p>Insert your awesome subtitle here</p>
+
+      <div class="circles">
+        <div class="circle-content">
+          <div class="circle">
+            <div class="label">65-19</div>
+            <div class="label">52-36</div>
+            <div class="label">69-48</div>
+            <div class="label">23-45</div>
+            <div class="circle-item">
+              <img src="./images/male.png" alt="male png" />
+            </div>
+          </div>
+
+          <h6>Male</h6>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Voluptatem, vel?
+          </p>
+        </div>
+        <div class="circle-content">
+          <div class="circle">
+            <div class="label">56-45</div>
+            <div class="label">48-18</div>
+            <div class="label">72-25</div>
+            <div class="label">36-85</div>
+            <div class="circle-item">
+              <img
+                src="./images/female.png"
+                alt="female png"
+                style="
+                  filter: grayscale(1) brightness(0) invert(70%) sepia(20%)
+                    hue-rotate(180deg);
+                "
+              />
+            </div>
+          </div>
+
+          <h6>Female</h6>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Voluptatem, vel?
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
