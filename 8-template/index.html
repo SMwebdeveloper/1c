@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Cards</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        background: #f4f4f4;
+      }
+      .container {
+        display: flex;
+        column-gap: 20px;
+      }
+      .card {
+        width: 200px;
+        height: 300px;
+        background: #4facfe;
+        padding-top: 20px;
+        border-radius: 10px;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; */
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+      .progress {
+        position: absolute;
+        top: 13%;
+        left: 20%;
+        width: 120px;
+        height: 120px;
+        position: relative;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: conic-gradient(
+          white 0deg,
+          white calc(var(--progress) * 3.6deg),
+          rgba(255, 255, 255, 0.3) calc(var(--progress) * 3.6deg),
+          rgba(255, 255, 255, 0.3) 360deg
+        );
+        mask: radial-gradient(circle at center, transparent 60%, black 61%);
+        clip-path: polygon(0% 33%, 100% 33%, 100% 100%, 0% 100%);
+        transform: rotate(180deg);
+      }
+      .percentage {
+        position: absolute;
+        top: 28%;
+        left: 35%;
+        font-size: 32px;
+        z-index: 22;
+        font-weight: bold;
+        color: white;
+      }
+      h2 {
+        font-size:42px ;
+        margin: 0;
+        color: #555;
+      }
+      h3 {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+      .desc{
+        font-size: 16px;
+        margin-bottom: 40px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+     <h2>Creative chart infographics</h2>
+     <p class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+    <div class="container">
+      <div class="card" style="background: #4facfe; --progress: 45">
+        <div class="progress"></div>
+        <div class="percentage">40%</div>
+        <h3>Title Here</h3>
+        <p>Describe the charts in a comprehensive way</p>
+      </div>
+
+      <div class="card" style="background: #30cfd0; --progress: 60">
+        <div class="progress">
+        </div>
+        <div class="percentage">60%</div>
+        <h3>Title Here</h3>
+        <p>Describe the charts in a comprehensive way</p>
+      </div>
+
+      <div class="card" style="background: #139679; --progress: 70">
+        <div class="progress">
+        </div>
+        <div class="percentage">80%</div>
+        <h3>Title Here</h3>
+        <p>Describe the charts in a comprehensive way</p>
+      </div>
+
+      <div class="card" style="background: #3a7bd5; --progress: 30">
+        <div class="progress">
+        </div>
+        <div class="percentage">20%</div>
+        <h3>Title Here</h3>
+        <p>Describe the charts in a comprehensive way</p>
+      </div>
+    </div>
+  </body>
+</html>
