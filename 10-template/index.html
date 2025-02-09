@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+
+      section {
+        padding: 20px 40px;
+        background-color: #f6f7f8;
+        border-radius: 20px;
+      }
+      h4 {
+        font-size: 32px;
+        font-weight: 600;
+        text-align: center;
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .desc {
+        font-size: 16px;
+        color: #555;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .chart-container {
+        display: flex;
+        align-items: start;
+        column-gap: 90px;
+      }
+
+      .charts {
+        display: flex;
+        align-items: start;
+        column-gap: 40px;
+      }
+
+      .chart-item {
+        width: 40px;
+        height: 270px;
+        background-color: #e5eff2;
+        border-radius: 30px;
+        display: flex;
+        align-items: end;
+      }
+
+      .chart-item .bar {
+        position: relative;
+        width: 100%;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+      .chart-item .bar span {
+        position: absolute;
+        display: inline-block;
+        left: -25%;
+        height: 60px;
+        width: 60px;
+        border-radius: 100%;
+        border: 2px solid #f5f5f5;
+        color: #f5f5f5;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+      }
+      .chart-item:first-child .bar {
+        height: 90%;
+        background-color: #44a5d9;
+      }
+      .chart-item:first-child .bar span {
+        top: -3%;
+        background-color: #44a5d9;
+      }
+
+      .chart-item:nth-child(2) .bar {
+        height: 50%;
+        background-color: #53acc5;
+      }
+      .chart-item:nth-child(2) .bar span {
+        top: -30%;
+        background-color: #53acc5;
+      }
+      .chart-item:nth-child(3) .bar {
+        height: 30%;
+        background-color: #62b1b0;
+      }
+      .chart-item:nth-child(3) .bar span {
+        top: -45%;
+        background-color: #62b1b0;
+      }
+      .chart-item:last-child .bar {
+        height: 70%;
+        background-color: #73b99d;
+      }
+      .chart-item:last-child .bar span {
+        top: -20%;
+        background-color: #73b99d;
+      }
+
+      .chart-content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+
+      .chart-content-item {
+        width: 400px;
+        padding: 10px 12px;
+        border-radius: 5px;
+      }
+
+      .chart-content-item h5 {
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 5px;
+      }
+
+      .chart-content-item p {
+        font-size: 12px;
+        color: white;
+      }
+
+      .chart-content-item:first-child {
+        background-color: #44a5d9;
+      }
+      .chart-content-item:nth-child(2) {
+        background-color: #53acc5;
+      }
+      .chart-content-item:nth-child(3) {
+        background-color: #62b1b0;
+      }
+      .chart-content-item:last-child {
+        background-color: #73b99d;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h4>Creative chart infographics</h4>
+      <p class="desc">Lorem ipsum dolor sit amet.</p>
+
+      <div class="chart-container">
+        <div class="charts">
+          <div class="chart-item">
+            <div class="bar">
+              <span>90%</span>
+            </div>
+          </div>
+          <div class="chart-item">
+            <div class="bar">
+              <span>50%</span>
+            </div>
+          </div>
+          <div class="chart-item">
+            <div class="bar">
+              <span>30%</span>
+            </div>
+          </div>
+          <div class="chart-item">
+            <div class="bar">
+              <span>70%</span>
+            </div>
+          </div>
+        </div>
+        <div class="chart-content">
+          <div class="chart-content-item">
+            <h5>Title Goes Here</h5>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <div class="chart-content-item">
+            <h5>Title Goes Here</h5>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <div class="chart-content-item">
+            <h5>Title Goes Here</h5>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <div class="chart-content-item">
+            <h5>Title Goes Here</h5>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
