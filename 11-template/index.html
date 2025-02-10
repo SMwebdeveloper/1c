@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      section {
+        background-color: white;
+        padding: 15px;
+        border-radius: 20px;
+      }
+
+      section h4 {
+        font-size: 32px;
+        color: #777;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+
+      section p {
+        font-size: 17px;
+        text-align: center;
+        color: #777;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      .charts-container {
+        position: relative;
+        width: 1100px;
+      }
+
+      .chart-lines {
+        display: flex;
+        flex-direction: column;
+        row-gap: 7px;
+      }
+      .chart-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+        width: 100%;
+        font-weight: 600;
+    }
+    
+    .chart-deg {
+        font-size: 14px;
+        width: 2%;
+        color: #777;
+
+      }
+      .chart-line span {
+        display: block;
+        width: 98%;
+        height: 1px;
+        background-color: #b1aeae;
+      }
+
+      .charts {
+        position: absolute;
+        top: 0%;
+        left: 7%;
+        width: 92%;
+        height: 100%;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .chart {
+        height: 92%;
+        width: 50px;
+        background-color: #dbd7d7;
+        border-radius: 30px;
+        font-size: 12px;
+        display: flex;
+        align-items: end;
+        -webkit-box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+        -moz-box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+        box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+      }
+
+      .chart span {
+        display: inline-block;
+        transform: rotate(-90deg);
+        color: white;
+      }
+
+      .bar {
+        width: 100%;
+        border-radius: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+      }
+      .chart:first-child .bar {
+        background-color: #138f85;
+        height: 40%;
+      }
+      .chart:nth-child(2) .bar {
+        background-color: #25a2b8;
+        height: 60%;
+      }
+      .chart:nth-child(3) .bar {
+        background-color: #48948e;
+        height: 70%;
+      }
+      .chart:nth-child(4) .bar {
+        background-color: #4d92ca;
+        height: 45%;
+      }
+      .chart:nth-child(5) .bar {
+        background-color: #28c0b3;
+        height: 58%;
+      }
+      .chart:nth-child(6) .bar {
+        background-color: #4669c9;
+        height: 90%;
+      }
+      .chart:nth-child(7) .bar {
+        background-color: #24bd52;
+        height: 25%;
+      }
+      .chart:nth-child(8) .bar {
+        background-color: #32ddcf;
+        height: 38%;
+      }
+      .chart:nth-child(9) .bar {
+        background-color: #0d5a56;
+        height: 100%;
+      }
+      .chart:nth-child(10) .bar {
+        background-color: #11495a;
+        height: 85%;
+      }
+      .chart:nth-child(11) .bar {
+        background-color: #437773;
+        height: 48%;
+      }
+      .chart:nth-child(12) .bar {
+        background-color: #88e03f;
+        height: 58%;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h4>Creative Chart Infographics</h4>
+      <p>Insert your awesome subtitle here</p>
+
+      <div class="charts-container">
+        <div class="chart-lines">
+          <div class="chart-line"><p class="chart-deg">100%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">90%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">80%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">70%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">60%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">50%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">40%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">30%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">20%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">10%</p> <span></span></div>
+          <div class="chart-line"><p class="chart-deg">0%</p> <span></span></div>
+          
+        </div>
+        <div class="charts">
+          <div class="chart">
+            <div class="bar"><span>Chart-1</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-2</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-3</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-4</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-5</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-6</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-7</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-8</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-9</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-10</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-11</span></div>
+          </div>
+          <div class="chart">
+            <div class="bar"><span>Chart-12</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
