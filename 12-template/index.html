@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      section h4 {
+        font-size: 32px;
+        color: #777;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+
+      section p {
+        font-size: 17px;
+        text-align: center;
+        color: #777;
+        font-weight: 500;
+        margin-bottom: 40px;
+      }
+
+      .charts {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+      }
+
+      .chart {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .chart-item:first-child .chart {
+        background: conic-gradient(
+          rgb(14, 150, 160) 0 35%,
+          transparent 35% 100%
+        );
+      }
+
+      .chart-item:nth-child(2) .chart {
+        background: conic-gradient(
+          rgb(4, 119, 90) 0 72%,
+          transparent 72% 100%
+        );
+      }
+      .chart-item:nth-child(3) .chart {
+        background: conic-gradient(
+          rgb(7, 202, 209) 0 63%,
+          transparent 63% 100%
+        );
+      }
+      .chart-item:nth-child(4) .chart {
+        background: conic-gradient(
+          rgb(8, 109, 192) 0 25%,
+          transparent 25% 100%
+        );
+      }
+
+      .chart::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .chart-item:first-child .chart::before {
+        bottom: 20%;
+        right: 7.5%;
+        background-color: rgb(14, 150, 160);
+      }
+      .chart-item:nth-child(2) .chart::before {
+        bottom: 38%;
+        left: -0.5%;
+        background-color: rgb(4, 119, 90);
+      }
+      .chart-item:nth-child(3) .chart::before {
+        bottom: 15%;
+        left: 11%;
+        background-color: rgb(7, 202, 209);
+      }
+      .chart-item:nth-child(4) .chart::before {
+        
+        right: -1%;
+        background-color: rgb(8, 109, 192);
+      }
+
+      .inner {
+        width: 244px;
+        height: 244px;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pie {
+        width: 228px;
+        height: 228px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .chart-item:first-child .pie {
+        background: conic-gradient(rgb(14, 150, 160) 0 35%, #dfebec 35% 100%);
+      }
+
+      .chart-item:nth-child(2) .pie {
+        background: conic-gradient(rgb(4, 119, 90) 0 72%, #dfebec 72% 100%);
+      }
+      .chart-item:nth-child(3) .pie {
+        background: conic-gradient(rgb(7, 202, 209) 0 63%, #dfebec 63% 100%);
+      }
+      .chart-item:nth-child(4) .pie {
+        background: conic-gradient(rgb(8, 109, 192) 0 25%, #dfebec 25% 100%);
+      }
+      .pie-progress {
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: #777;
+      }
+
+      .chart-content {
+        text-align: center;
+      }
+
+      .chart-content h6 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #777;
+      }
+      .chart-content p {
+        margin: 0 auto;
+        font-size: 12px;
+        font-weight: 500;
+        width: 200px;
+        line-height: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h4>Creative Chart Infographics</h4>
+      <p>Insert your awesome subtitle here</p>
+
+      <div class="charts">
+        <div class="chart-item">
+          <div class="chart">
+            <div class="inner">
+              <div class="pie">
+                <div class="pie-progress">35%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-content">
+            <h6>Title Goes Here</h6>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+          </div>
+        </div>
+        <div class="chart-item">
+          <div class="chart">
+            <div class="inner">
+              <div class="pie">
+                <div class="pie-progress">72%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-content">
+            <h6>Title Goes Here</h6>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+          </div>
+        </div>
+        <div class="chart-item">
+          <div class="chart">
+            <div class="inner">
+              <div class="pie">
+                <div class="pie-progress">63%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-content">
+            <h6>Title Goes Here</h6>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+          </div>
+        </div>
+        <div class="chart-item">
+          <div class="chart">
+            <div class="inner">
+              <div class="pie">
+                <div class="pie-progress">25%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-content">
+            <h6>Title Goes Here</h6>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
