@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circle Menu with Clock</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        background-color: #f4f4f4;
+      }
+
+      section {
+        position: relative;
+      }
+      section h4 {
+        font-size: 32px;
+        color: #777;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+
+      section p {
+        font-size: 17px;
+        text-align: center;
+        color: #777;
+        font-weight: 500;
+        margin-bottom: 40px;
+      }
+
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* column-gap: 10px; */
+      }
+
+      .left-contents, .right-contents {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+      }
+
+      .left-contents {
+        align-items: end;
+      }
+      .left-contents .circle-content:nth-child(2) {
+        margin-right: 50px;
+      }
+
+      .right-contents .circle-content:nth-child(2) {
+        margin-left: 50px;
+      }
+      
+      .left-contents .circle-content,
+      .left-contents .circle-content p {
+          text-align: right;
+        }
+    
+
+        
+
+      .circle-content {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .circle-content h5 {
+        font-size: 14px;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+      .circle-content p {
+        font-size: 12px;
+        font-weight: 300;
+        width: 200px;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+      }
+      .circle-menu {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(
+          #276c91 0deg 60deg,
+          #229cbe 60deg 120deg,
+          #1196ad 120deg 180deg,
+          #32a4c7 180deg 240deg,
+          #15898d 240deg 300deg,
+          #18bdf0 300deg 360deg
+        );
+      }
+      .clock {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border: 2px solid black;
+        position: relative;
+        -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+      }
+      .hand {
+        position: absolute;
+        width: 2px;
+        background: black;
+        transform-origin: bottom;
+      }
+      .hour-hand {
+        height: 25px;
+        top: 32%;
+      }
+      .minute-hand {
+        height: 40px;
+        top: 22%;
+      }
+      .second-hand {
+        height: 50px;
+        top: 15%;
+        background: red;
+      }
+      .marker {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: black;
+        border-radius: 2px;
+      }
+      .tick {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h4>Creative Chart Infographics</h4>
+      <p>Insert your awesome subtitle here</p>
+
+      <div class="content">
+        <div class="left-contents">
+          <div class="circle-content">
+            <h5>Title Goes Here</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              sequi.
+            </p>
+          </div>
+          <div class="circle-content margin-right">
+            <h5>Title Goes Here</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              sequi.
+            </p>
+          </div>
+          
+          <div class="circle-content">
+            <h5>Title Goes Here</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              sequi.
+            </p>
+          </div>
+        </div>
+
+        <div class="circle-menu">
+          <div class="clock">
+            <div>
+              <div class="hand hour-hand" id="hour-hand"></div>
+              <div class="hand minute-hand" id="minute-hand"></div>
+              <div class="hand second-hand" id="second-hand"></div>
+            </div>
+
+            <div class="tick" style="top: 3%; left: 49%"></div>
+            <div class="tick" style="top: 11%; right: 24%"></div>
+            <div class="tick" style="top: 27%; right: 9%"></div>
+            <div class="tick" style="top: 48.5%; right: 3%"></div>
+            <div class="tick" style="bottom: 12%; right: 25%"></div>
+            <div class="tick" style="top: 69%; right: 10%"></div>
+            <div class="tick" style="bottom: 5%; right: 47%"></div>
+            <div class="tick" style="bottom: 11%; left: 25%"></div>
+            <div class="tick" style="bottom: 27%; left: 10%"></div>
+            <div class="tick" style="top: 50%; left: 5%"></div>
+            <div class="tick" style="top: 25%; left: 10%"></div>
+            <div class="tick" style="top: 10%; left: 25%"></div>
+          </div>
+        </div>
+
+        <div class="right-contents">
+          <div class="circle-content">
+            <h5>Title Goes Here</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              sequi.
+            </p>
+          </div>
+          <div class="circle-content">
+            <h5>Title Goes Here</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              sequi.
+            </p>
+          </div>
+          <div class="circle-content">
+            <h5>Title Goes Here</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              sequi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const hours = now.getHours() % 12;
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const hourDeg = hours * 30 + minutes * 0.5;
+        const minuteDeg = minutes * 6 + seconds * 0.1;
+        const secondDeg = seconds * 6;
+
+        document.getElementById(
+          "hour-hand"
+        ).style.transform = `rotate(${hourDeg}deg)`;
+        document.getElementById(
+          "minute-hand"
+        ).style.transform = `rotate(${minuteDeg}deg)`;
+        document.getElementById(
+          "second-hand"
+        ).style.transform = `rotate(${secondDeg}deg)`;
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>
