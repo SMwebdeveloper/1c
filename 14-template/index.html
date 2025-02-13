@@ -1,0 +1,102 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .pie {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: #e0ecf5; /* Orqa fon */
+      }
+
+      .left,
+      .right {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        clip: rect(0px, 120px, 120px, 60px); /* Yarim doira hosil qilish */
+      }
+
+      .left {
+        background: #2ca3df;
+        animation: rotate-right 1s linear forwards;
+        transform: rotate(180deg);
+    }
+    
+    .right {
+        background: #2ca3df;
+      }
+
+      .inner-circle {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: white;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      @keyframes rotate-right {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(50deg);
+        } /* 60% */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pie">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="inner-circle">60%</div>
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Pie Chart</title>
+</head>
+<body>
+    <canvas id="pieChart" width="200" height="200"></canvas>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const canvas = document.getElementById("pieChart");
+            const ctx = canvas.getContext("2d");
+            const colors = ["#5fd3e4", "#499ff8", "#d7ebff"];
+            const percentages = [30, 25, 45]; // Pie chart bo'laklari foizlarda
+            let startAngle = -0.5 * Math.PI; // Tepa qismdan boshlash uchun
+
+            percentages.forEach((percentage, index) => {
+                const sliceAngle = (percentage / 100) * 2 * Math.PI;
+                ctx.beginPath();
+                ctx.moveTo(100, 100);
+                ctx.arc(100, 100, 100, startAngle, startAngle + sliceAngle);
+                ctx.closePath();
+                ctx.fillStyle = colors[index];
+                ctx.fill();
+                startAngle += sliceAngle;
+            });
+        });
+    </script>
+</body>
+</html>
+
