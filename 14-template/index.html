@@ -73,30 +73,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas Pie Chart</title>
+    <title>Pure CSS Pie Chart</title>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .slice {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* clip-path: polygon(50% 50%, 100% 50%, 100% 0, 50% 0); */
+            transform-origin: 50% 50%;
+        }
+
+        .slice1 {
+            background: red;
+            transform: rotate(0deg);
+        }
+
+        .slice2 {
+            background: blue;
+            transform: rotate(126deg);
+        }
+
+        .slice3 {
+            background: green;
+            transform: rotate(288deg);
+        }
+    </style>
 </head>
 <body>
-    <canvas id="pieChart" width="200" height="200"></canvas>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const canvas = document.getElementById("pieChart");
-            const ctx = canvas.getContext("2d");
-            const colors = ["#5fd3e4", "#499ff8", "#d7ebff"];
-            const percentages = [30, 25, 45]; // Pie chart bo'laklari foizlarda
-            let startAngle = -0.5 * Math.PI; // Tepa qismdan boshlash uchun
-
-            percentages.forEach((percentage, index) => {
-                const sliceAngle = (percentage / 100) * 2 * Math.PI;
-                ctx.beginPath();
-                ctx.moveTo(100, 100);
-                ctx.arc(100, 100, 100, startAngle, startAngle + sliceAngle);
-                ctx.closePath();
-                ctx.fillStyle = colors[index];
-                ctx.fill();
-                startAngle += sliceAngle;
-            });
-        });
-    </script>
+    <div class="chart-container">
+        <div class="slice slice1" style="clip-path: polygon(50% 50%, 100% 100%, 100% 0, 0% -50%); transform: rotate(0deg) skewY(0deg);"></div>
+        <div class="slice slice2" style="clip-path: polygon(50% 50%, 100% 50%, 100% 0, 30% 0); transform: rotate(100deg) skewY(0deg);"></div>
+        <div class="slice slice3" style="clip-path: polygon(50% 50%, 100% 35%, 100% 0, -100% 0); transform: rotate(288deg) skewY(0deg);"></div>
+    </div>
 </body>
 </html>
 
