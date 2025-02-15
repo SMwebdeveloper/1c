@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Circle Menu with Clock</title>
     <style>
-        *{
-            box-sizing: border-box;
-            margin: 0;
-            padding:0 ;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
       body {
         display: flex;
         justify-content: center;
@@ -41,13 +41,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        /* column-gap: 10px; */
       }
 
-      .left-contents, .right-contents {
+      .left-contents,
+      .right-contents {
         display: flex;
         flex-direction: column;
-        row-gap: 50px;
+        row-gap: 100px;
       }
 
       .left-contents {
@@ -60,14 +60,11 @@
       .right-contents .circle-content:nth-child(2) {
         margin-left: 50px;
       }
-      
+
       .left-contents .circle-content,
       .left-contents .circle-content p {
-          text-align: right;
-        }
-    
-
-        
+        text-align: right;
+      }
 
       .circle-content {
         width: 200px;
@@ -88,26 +85,136 @@
         padding: 0;
         margin: 0;
       }
-      .circle-menu {
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
         position: relative;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
+        width: 400px;
+        height: 400px;
         overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: conic-gradient(
-          #276c91 0deg 60deg,
-          #229cbe 60deg 120deg,
-          #1196ad 120deg 180deg,
-          #32a4c7 180deg 240deg,
-          #15898d 240deg 300deg,
-          #18bdf0 300deg 360deg
-        );
+        border-radius: 50%;
+      }
+      ul li {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        -webkit-transform-origin: 100% 100%;
+        overflow: hidden;
+      }
+      ul li div {
+        color: #fcd1d5;
+        display: block;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+        font-size: 25px;
+        color: var(--color-light);
+        transition: 0.3s ease-in-out all;
+        padding-top: 60px;
+      }
+
+      
+     
+      ul li:nth-child(1) {
+        display: block;
+        -moz-transform: rotate(90deg) skew(30deg);
+        -ms-transform: rotate(90deg) skew(30deg);
+        -webkit-transform: rotate(60deg) skew(30deg);
+        transform: rotate(90deg) skew(30deg);
+      }
+      ul li:nth-child(1) div {
+        background-color: #276c91;
+        line-height: 50px;
+        -moz-transform: skew(-30deg) rotate(-60deg);
+        -ms-transform: skew(-30deg) rotate(-60deg);
+        -webkit-transform: skew(-30deg) rotate(-60deg);
+        transform: skew(-30deg) rotate(-60deg);
+      }
+
+      ul li:nth-child(2) {
+        background-color: #229cbe;
+        display: block;
+        -moz-transform: rotate(150deg) skew(30deg);
+        -ms-transform: rotate(150deg) skew(30deg);
+        -webkit-transform: rotate(150deg) skew(30deg);
+        transform: rotate(150deg) skew(30deg);
+      }
+
+      ul li:nth-child(2) div {
+        line-height: 70px;
+        -moz-transform: skew(-30deg) rotate(-60deg);
+        -ms-transform: skew(-30deg) rotate(-60deg);
+        -webkit-transform: skew(-30deg) rotate(-60deg);
+        transform: skew(-30deg) rotate(-60deg);
+      }
+      ul li:nth-child(3) {
+        background-color: #1196ad;
+        display: block;
+        -moz-transform: rotate(210deg) skew(30deg);
+        -ms-transform: rotate(210deg) skew(30deg);
+        -webkit-transform: rotate(210deg) skew(30deg);
+        transform: rotate(210deg) skew(30deg);
+      }
+      ul li:nth-child(3) div {
+        line-height: 70px;
+        -moz-transform: skew(-30deg) rotate(-60deg);
+        -ms-transform: skew(-30deg) rotate(-60deg);
+        -webkit-transform: skew(-30deg) rotate(-60deg);
+        transform: skew(-30deg) rotate(-60deg);
+      }
+      ul li:nth-child(4) {
+        background-color: #32a4c7;
+        display: block;
+        -moz-transform: rotate(270deg) skew(30deg);
+        -ms-transform: rotate(270deg) skew(30deg);
+        -webkit-transform: rotate(270deg) skew(30deg);
+        transform: rotate(270deg) skew(30deg);
+      }
+      ul li:nth-child(4)div {
+        line-height: 80px;
+        -moz-transform: skew(-30deg) rotate(-60deg);
+        -ms-transform: skew(-30deg) rotate(-60deg);
+        -webkit-transform: skew(-30deg) rotate(-60deg);
+        transform: skew(-30deg) rotate(-60deg);
+      }
+      ul li:nth-child(5) {
+        background-color: #15898d;
+        display: block;
+        -moz-transform: rotate(330deg) skew(30deg);
+        -ms-transform: rotate(330deg) skew(30deg);
+        -webkit-transform: rotate(330deg) skew(30deg);
+        transform: rotate(330deg) skew(30deg);
+      }
+      ul li:nth-child(5) div {
+        line-height: 70px;
+        -moz-transform: skew(-30deg) rotate(-60deg);
+        -ms-transform: skew(-30deg) rotate(-60deg);
+        -webkit-transform: skew(-30deg) rotate(-60deg);
+        transform: skew(-30deg) rotate(-60deg);
+      }
+      ul li:nth-child(6) {
+        background-color: #18bdf0;
+        display: block;
+        -moz-transform: rotate(390deg) skew(30deg);
+        -ms-transform: rotate(390deg) skew(30deg);
+        -webkit-transform: rotate(390deg) skew(30deg);
+        transform: rotate(390deg) skew(30deg);
+      }
+      ul li:nth-child(6) div {
+        line-height: 70px;
+        -moz-transform: skew(-30deg) rotate(-60deg);
+        -ms-transform: skew(-30deg) rotate(-60deg);
+        -webkit-transform: skew(-30deg) rotate(-60deg);
+        transform: skew(-30deg) rotate(-60deg);
       }
       .clock {
         position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 150px;
         height: 150px;
         background: white;
@@ -121,6 +228,7 @@
         -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
         -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
         box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        /* transform: rotate(-90deg); */
       }
       .hand {
         position: absolute;
@@ -178,7 +286,7 @@
               sequi.
             </p>
           </div>
-          
+
           <div class="circle-content">
             <h5>Title Goes Here</h5>
             <p>
@@ -188,7 +296,26 @@
           </div>
         </div>
 
-        <div class="circle-menu">
+        <ul class="circle-menu">
+          <li>
+            <div href="#"> </div>
+          </li>
+          <li>
+            <div href="#"> </div>
+          </li>
+          <li>
+            <div href="#"> </div>
+          </li>
+          <li>
+            <div href="#"> </div>
+          </li>
+          <li>
+            <div href="#"> </div>
+          </li>
+          <li>
+            <div href="#"> </div>
+          </li>
+
           <div class="clock">
             <div>
               <div class="hand hour-hand" id="hour-hand"></div>
@@ -209,7 +336,7 @@
             <div class="tick" style="top: 25%; left: 10%"></div>
             <div class="tick" style="top: 10%; left: 25%"></div>
           </div>
-        </div>
+        </ul>
 
         <div class="right-contents">
           <div class="circle-content">
