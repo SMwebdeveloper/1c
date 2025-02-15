@@ -16,7 +16,7 @@
         color: #333;
       }
 
-      /* .container {
+      .container {
         text-align: center;
         margin-top: 30px;
         padding: 20px;
@@ -55,6 +55,7 @@
         margin-bottom: 15px;
         position: relative;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
         margin-bottom: 30px;
       }
 
@@ -66,7 +67,7 @@
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        border: 4px solid white; 
+        border: 4px solid white; /* Clear border separating slices */
         box-sizing: border-box;
       }
 
@@ -86,7 +87,7 @@
       }
 
       .icon-top::after {
-        content: "\1F464"; 
+        content: "\1F464"; /* Unicode for user icon */
         font-size: 16px;
         color: #777;
       }
@@ -107,7 +108,7 @@
       }
 
       .icon-bottom::after {
-        content: "\1F464"; 
+        content: "\1F464"; /* Unicode for user icon */
         font-size: 16px;
         color: #777;
       }
@@ -166,63 +167,27 @@
         height: 10px;
         border: 2px solid white;
         background-color: rgb(93, 217, 233);
-      } */
-      /* Markazga joylash */
-      .pie-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: #f8f9fa;
       }
-
-      /* Asosiy doira */
-      .pie {
-        position: relative;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background: white;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-      }
-
-      /* Har bir bo‘lak */
       .slice {
         position: absolute;
         width: 100%;
         height: 100%;
-        border-radius: 50%;
-        clip: rect(0, 150px, 150px, 75px); /* Yarim doira hosil qilish */
         transform-origin: 50% 50%;
       }
 
       .slice1 {
-        background: #5bcdfd;
-      }
-      .slice2 {
-        background: #4a9ff5;
-      }
-      .slice3 {
-        background: #d6ebff;
+        background: #4c9ffe;
+        /* transform: rotate(0deg); */
       }
 
-      /* Ichki doira (Markazdagi foiz) */
-      .inner-circle {
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        background: white;
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: #333;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      .slice2 {
+        background: #d9edff;
+        /* transform: rotate(126deg); */
+      }
+
+      .slice3 {
+        background: rgb(93, 217, 233);
+        /* transform: rotate(288deg); */
       }
     </style>
   </head>
@@ -230,26 +195,30 @@
     <div class="container">
       <div class="title">Social Media</div>
       <div class="subtitle">Insert your awesome subtitle here</div>
-      <div class="pie-container">
-        <div class="pie">
-          <div class="slice slice1"></div>
-          <div class="slice slice2"></div>
-          <div class="slice slice3"></div>
-        </div>
-      </div>
-
-      <!-- <div class="chart-container">
+      <div class="chart-container">
         <div class="chart">
-          <div
-            class="pie"
-            style="
-              background: conic-gradient(
-                #4c9ffe 0% 30%,
-                #d9edff 30% 65%,
-                rgb(93, 217, 233) 65% 100%
-              );
-            "
-          >
+          <div class="pie">
+            <div
+              class="slice slice1"
+              style="
+                clip-path: polygon(50% 50%, 100% 100%, 100% 0, 50% -50%);
+                transform: rotate(0deg) skewY(0deg);
+              "
+            ></div>
+            <div
+              class="slice slice2"
+              style="
+                clip-path: polygon(50% 50%, 100% 200%, 100% 0, 80% 0%);
+                transform: rotate(100deg) skewY(0deg);
+              "
+            ></div>
+            <div
+              class="slice slice3"
+              style="
+                clip-path: polygon(50% 50%, 100% 35%, 100% 0, 20% 0%);
+                transform: rotate(288deg) skewY(0deg);
+              "
+            ></div>
             <div class="icon-top"></div>
             <div class="icon-bottom"></div>
           </div>
@@ -259,11 +228,11 @@
               <span></span>
             </li>
             <li class="second">
-              <span>Tovar-2: 35%</span>
+              <span>Tovar-2: 45%</span>
               <span></span>
             </li>
             <li class="third">
-              <span>Tovar-3: 35%</span>
+              <span>Tovar-3: 25%</span>
               <span></span>
             </li>
           </ul>
@@ -273,17 +242,30 @@
             business
           </div>
         </div>
+
         <div class="chart">
-          <div
-            class="pie"
-            style="
-              background: conic-gradient(
-                #4c9ffe 0% 40%,
-                #d9edff 40% 75%,
-                rgb(93, 217, 233) 75% 100%
-              );
-            "
-          >
+          <div class="pie">
+            <div
+              class="slice slice1"
+              style="
+                clip-path: polygon(50% 50%, 100% 150%, 100% 0, 50% -50%);
+                transform: rotate(0deg) skewY(0deg);
+              "
+            ></div>
+            <div
+              class="slice slice2"
+              style="
+                clip-path: polygon(50% 50%, 100% 100%, 100% 0, 120% 0%);
+                transform: rotate(100deg) skewY(0deg);
+              "
+            ></div>
+            <div
+              class="slice slice3"
+              style="
+                clip-path: polygon(50% 50%, 100% 35%, 100% 0, -30% 0%);
+                transform: rotate(288deg) skewY(0deg);
+              "
+            ></div>
             <div class="icon-top"></div>
             <div class="icon-bottom"></div>
           </div>
@@ -293,11 +275,11 @@
               <span></span>
             </li>
             <li class="second">
-              <span>Tovar-2: 35%</span>
+              <span>Tovar-2: 20%</span>
               <span></span>
             </li>
             <li class="third">
-              <span>Tovar-1: 25%</span>
+              <span>Tovar-1: 35%</span>
               <span></span>
             </li>
           </ul>
@@ -308,30 +290,42 @@
           </div>
         </div>
         <div class="chart">
-          <div
-            class="pie"
-            style="
-              background: conic-gradient(
-                #4c9ffe 0% 20%,
-                #d9edff 20% 70%,
-                rgb(93, 217, 233) 70% 100%
-              );
-            "
-          >
+          <div class="pie">
+            <div
+              class="slice slice1"
+              style="
+                clip-path: polygon(50% 50%, 100% 40%, 100% 0, 50% -50%);
+                transform: rotate(0deg) skewY(0deg);
+              "
+            ></div>
+            <div
+              class="slice slice2"
+              style="
+                clip-path: polygon(50% 50%, 100% 70%, 100% 0, 30% 0%);
+                transform: rotate(100deg) skewY(0deg);
+              "
+            ></div>
+            <div
+              class="slice slice3"
+              style="
+                clip-path: polygon(50% 50%, 100% 35%, 100% 0, -140% 0%);
+                transform: rotate(288deg) skewY(0deg);
+              "
+            ></div>
             <div class="icon-top"></div>
             <div class="icon-bottom"></div>
           </div>
           <ul>
             <li class="first">
-              <span>Tovar-1: 20%</span>
+              <span>Tovar-1: 25%</span>
               <span></span>
             </li>
             <li class="second">
-              <span>Tovar-2: 50%</span>
+              <span>Tovar-2: 40%</span>
               <span></span>
             </li>
             <li class="third">
-              <span>Tovar-1: 30%</span>
+              <span>Tovar-1: 35%</span>
               <span></span>
             </li>
           </ul>
@@ -341,31 +335,44 @@
             business
           </div>
         </div>
+
         <div class="chart">
-          <div
-            class="pie"
-            style="
-              background: conic-gradient(
-                #4c9ffe 0% 40%,
-                #d9edff 40% 55%,
-                rgb(93, 217, 233) 55% 100%
-              );
-            "
-          >
+          <div class="pie">
+            <div
+              class="slice slice1"
+              style="
+                clip-path: polygon(50% 120%, 100% 100%, 100% 0, 50% -50%);
+                transform: rotate(0deg) skewY(0deg);
+              "
+            ></div>
+            <div
+              class="slice slice2"
+              style="
+                clip-path: polygon(50% 50%, 100% 300%, 100% 0, 100% 40%);
+                transform: rotate(100deg) skewY(0deg);
+              "
+            ></div>
+            <div
+              class="slice slice3"
+              style="
+                clip-path: polygon(50% 50%, 100% 35%, 100% 0, 30% 0%);
+                transform: rotate(288deg) skewY(0deg);
+              "
+            ></div>
             <div class="icon-top"></div>
             <div class="icon-bottom"></div>
           </div>
           <ul>
             <li class="first">
-              <span>Tovar-1: 40%</span>
+              <span>Tovar-1: 50%</span>
               <span></span>
             </li>
             <li class="second">
-              <span>Tovar-2: 15%</span>
+              <span>Tovar-2: 25%</span>
               <span></span>
             </li>
             <li class="third">
-              <span>Tovar-1: 45%</span>
+              <span>Tovar-1: 25%</span>
               <span></span>
             </li>
           </ul>
@@ -375,33 +382,7 @@
             business
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
-    <script>
-      function updatePieChart(percentages) {
-        let total = percentages.reduce((a, b) => a + b, 0);
-        if (total !== 100) {
-          console.error("Xatolik: Foizlar yig‘indisi 100% bo‘lishi kerak!");
-          return;
-        }
-
-        let angles = percentages.map((p) => (p / 100) * 360);
-        let slices = document.querySelectorAll(".slice");
-
-        let currentAngle = 0;
-        slices.forEach((slice, index) => {
-          slice.style.transform = `rotate(${currentAngle}deg)`;
-          currentAngle += angles[index] / 2; // Har bir segmentni to‘g‘ri joylash
-        });
-
-        // Markazdagi foiz ko‘rsatkichi
-        document.querySelector(".inner-circle").textContent =
-          percentages.join("% / ") + "%";
-      }
-
-      // Dinamik misol: 30%, 40%, 30%
-      updatePieChart([30, 40, 30]);
-      setTimeout(() => updatePieChart([25, 50, 25]), 3000); // 3 soniyadan keyin o‘zgaradi
-    </script>
   </body>
 </html>
